@@ -5,10 +5,6 @@ var options = {
         language: 'en-GB',
         limit: 5
     },
-    autocompleteOptions: {
-        key: 'jkywgX4Mo9E3DalmYxabYnBOQVHFvhMj',
-        language: 'en-GB'
-    }
 };
 
 /* Vector Map Rendering */
@@ -191,5 +187,7 @@ function createMarker(coordinates){
     .addTo(map);
 }
 
-test = [30.5, 50.5];
-createMarker(test);
+/* test = [30.5, 50.5];
+createMarker(test); */
+let roma = [12.49427, 41.89056];
+createMarker(roma);
