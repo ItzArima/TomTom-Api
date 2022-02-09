@@ -174,20 +174,32 @@ ttSearchBox.on('tomtom.searchbox.resultsfound', function(data) {
 
 
 /* Create The Marker with Popup */
-function createMarker(coordinates){
+function createMarker(object){
     
     /* create the popup for the marker*/
     var popup = new tt.Popup()
-        .setHTML("<p>Hello I'm a Popup!</p>")
+        .setHTML("<p>"+object.name+"</p>")
     
     /* Create the Marker */
     var marker = new tt.Marker()
-    .setLngLat(coordinates) /* Coordinates here */
+    .setLngLat(object.coords) /* Coordinates here */
     .setPopup(popup)
     .addTo(map);
 }
 
-/* test = [30.5, 50.5];
-createMarker(test); */
-let roma = [12.49427, 41.89056];
-createMarker(roma);
+/* Test objects array */
+let cities = [
+    { 
+        coords : [12.49427, 41.89056],
+        name : 'roma'
+    },
+    { 
+        coords : [23.2136, 49.51508],
+        name : 'aprilia'
+    }
+]
+
+/* generate on map from test array */
+for(let i=0; i<cities.length; i++){
+    createMarker(cities[i])
+}
